@@ -369,6 +369,8 @@ void checkPrayerTimes() {
     if (nowMinutes == prayerTimes[i].minutesSinceMidnight) {
       snprintf(tempBuffer, sizeof(tempBuffer), "It's time for %s\n", prayerTimes[i].name.c_str());
       _PRINT_DEBUG_(tempBuffer);
+      if (i == 0 || i == 4) audio.setVolume(4);
+      else audio.setVolume(AudioVol);
       selectTrack(7, false);
     } else if (nowMinutes == prayerTimes[i].minutesSinceMidnight - 1) {
       snprintf(tempBuffer, sizeof(tempBuffer), "1 minutes until %s\n", prayerTimes[i].name.c_str());
