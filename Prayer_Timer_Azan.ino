@@ -1,16 +1,6 @@
 // Audio
-// Booster_audio_SPIFFS (1.8MB OTA/0.5MB)
+// audio_SPIFFS (1.8MB OTA/0.5MB)
 
-
-//# 1835008 B App , 393216 B Spiffs  (1.835008 , 393.216)
-//# Name,   Type, SubType, Offset,  Size, Flags
-//# nvs,      data, nvs,     0x9000,  0x5000,
-//# otadata,  data, ota,     0xE000,  0x2000,
-//# app0,     app,  ota_0,   0x10000, 0x1C0000,
-//# app1,     app,  ota_1,   0x1D0000,0x1C0000,
-//# spiffs,   data, spiffs,  0x390000,0x60000,
-//# coredump, data, coredump,0x3F0000,0x10000,
-//
 //# 1769472 B App , 524288 B Spiffs  (1.769472 , 524.288)
 //# Name,   Type, SubType, Offset,  Size, Flags
 //nvs,      data, nvs,     0x9000,  0x5000,
@@ -21,13 +11,16 @@
 //coredump, data, coredump,0x3F0000,0x10000,
 
 
-//esp32.menu.PartitionScheme.Booster=Booster_Audio (1.7MB OTA/0.5MB)
-//esp32.menu.PartitionScheme.Booster.build.partitions=booster_audio_spiffs
+//esp32.menu.PartitionScheme.Booster=Audio (1.7MB OTA/0.5MB)
+//esp32.menu.PartitionScheme.Booster.build.partitions=audio_spiffs
 //esp32.menu.PartitionScheme.Booster.upload.maximum_size=1769472
+
+//192.168.178.125/webserial
 
 
 #include <WiFiManager.h>
 #include <ArduinoOTA.h>
+#include <ESPmDNS.h>
 
 #include <AsyncTCP.h>
 #include <ESPAsyncWebServer.h>
@@ -39,15 +32,22 @@
 #include <algorithm> // For std::sort
 #include "time.h"
 #include "esp_sntp.h"
-
 //I2S MAX98357
 #include "Audio.h"
 #include "SPIFFS.h"
+#include <OneButton.h>
+#include <Wire.h>
+#include <Adafruit_AHTX0.h> // SDA 4  SCL 5
+#include <SFE_BMP180.h>
+#include <Wire.h>
+#include "SinricPro.h"
+#include "SinricProTemperaturesensor.h"
 
-//#include <OneButton.h>
-//#include <Wire.h>
-//#include <Adafruit_AHTX0.h> // SDA 4  SCL 5
-//#include <SFE_BMP180.h>
+
+
+#define TEMP_SENSOR_ID    "64df8a285e79b06c4b50167e"
+#define APP_KEY           "f272c891-848d-4713-b9dd-26fc73f857c7"
+#define APP_SECRET        "7297533d-4180-422d-893b-47d6a504c3a3-cd39a1c5-de41-4d8f-a10a-829c14a93bd6"
 
 
 #define INDOOR_PIN       18
@@ -82,8 +82,10 @@ bool trackChanged = false;
 bool isPlaying = false; // Flag to indicate if a track is currently playing
 
 char tempBuffer[256];
+int mailCount = 0;
+char Data[300];
 
-int AudioVol = 10;
+int AudioVol = 8;
 
 
 const char* tracks[] = {
@@ -101,10 +103,136 @@ const char* tracks[] = {
 WiFiManager wifiManager; // global wm instance
 Audio audio;
 AsyncWebServer server(80);
+OneButton Indoor(INDOOR_PIN, false, true);
+OneButton Outdoor(OUTDOOR_PIN, false, true);
+Adafruit_AHTX0 aht;
+SFE_BMP180 pressure;
+SinricProTemperaturesensor &mySensor = SinricPro[TEMP_SENSOR_ID];
+
+double humidity, temperature, lastTemperature, lastHumidity, T, P;
+unsigned long lastEvent = (-60000); // last time event has been sent
+char status;
 
 //#define _PRINT_DEBUG_(msg) Serial.print(msg)
 //#define _PRINT_DEBUG_(msg) WebSerial.print(msg)
 #define _PRINT_DEBUG_(msg) { Serial.print(msg); WebSerial.print(msg); }
+
+void SinricPro_Task(void *pvParameters ) {
+  (void) pvParameters;
+  vTaskDelay(5000);
+  SinricPro.onConnected([]() {
+    _PRINT_DEBUG_("Connected to SinricPro\r\n");
+    //    for (int i = 0; i <= 3; i++) {
+    //      digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
+    //      delay(500);
+    //    }
+    //    digitalWrite(LED_BUILTIN, 1);
+  });
+  SinricPro.onDisconnected([]() {
+    _PRINT_DEBUG_("Disconnected from SinricPro\r\n");
+    //    for (int i = 0; i <= 7; i++) {
+    //      digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
+    //      delay(500);
+    //    }
+    //    digitalWrite(LED_BUILTIN, 1);
+  });
+  SinricPro.restoreDeviceStates(true); // Uncomment to restore the last known state from the server.
+  SinricPro.begin(APP_KEY, APP_SECRET);
+
+  _PRINT_DEBUG_("SinricPro Ready\n");
+
+  if (!aht.begin() || !pressure.begin())
+    _PRINT_DEBUG_("Could not find a valid AHT21 or BMP180, init fail\n");
+
+  Indoor.attachLongPressStop(MailSensor_InDoor);
+  //  Indoor.setPressMs(1000);
+  Indoor.setDebounceMs(100);
+  Outdoor.attachLongPressStop(MailSensor_OutDoor);
+  //  Outdoor.setPressMs(1000);
+  Outdoor.setDebounceMs(100);
+
+  vTaskDelay(1);
+
+  for (;;) {
+    SinricPro.handle();
+    Indoor.tick();
+    Outdoor.tick();
+    handleTemperature_Pressure_sensor();
+    vTaskDelay(5);
+  }
+}
+
+void handleTemperature_Pressure_sensor() {
+  if (!aht.begin() || !pressure.begin()) {
+    _PRINT_DEBUG_("--Could not find a valid AHT21 or BMP180, init fail\n");
+    delay(1000);
+    return;
+  }
+
+  sensors_event_t hum, temp;
+  aht.getEvent(&hum, &temp);
+
+  humidity = hum.relative_humidity + 9.0;
+  temperature = temp.temperature - 5.0;
+
+  status = pressure.startTemperature();
+  if (status != 0) {
+    delay(status);
+    status = pressure.getTemperature(T);
+    if (status != 0) {
+      status = pressure.startPressure(3);
+      if (status != 0) {
+        delay(status);
+        status = pressure.getPressure(P, T);
+        if (status != 0) {
+          snprintf(tempBuffer, sizeof(tempBuffer), "Temperature: %2.1f Celsius\tPressure: %fmB\r\n", T, P);
+          _PRINT_DEBUG_(tempBuffer);
+        } else _PRINT_DEBUG_("error retrieving pressure measurement\n");
+      } else _PRINT_DEBUG_("error starting pressure measurement\n");
+    } else _PRINT_DEBUG_("error retrieving temperature measurement\n");
+  } else _PRINT_DEBUG_("error starting temperature measurement\n");
+
+
+  if (isnan(temperature) || isnan(humidity)) { // reading failed...
+    _PRINT_DEBUG_("AHT reading failed!\r\n");  // print error message
+    return;                                    // try again next time
+  }
+
+
+  unsigned long actualMillis = millis();
+  if (actualMillis - lastEvent < 60000) return; //only check every EVENT_WAIT_TIME milliseconds
+  if (temperature == lastTemperature || humidity == lastHumidity) return;
+
+  SinricProTemperaturesensor &mySensor = SinricPro[TEMP_SENSOR_ID];  // get temperaturesensor device
+  bool success = mySensor.sendTemperatureEvent(temperature, humidity); // send event
+
+  if (success) {
+    snprintf(tempBuffer, sizeof(tempBuffer), "Temperature: %2.1f Celsius\tHumidity: %2.1f%%\r\n", temperature, humidity);
+    _PRINT_DEBUG_(tempBuffer);
+  } else {
+    _PRINT_DEBUG_("Something went wrong...could not send Event to server!\r\n");
+  }
+
+  lastTemperature = temperature;  // save actual temperature for next compare
+  lastHumidity = humidity;        // save actual humidity for next compare
+  lastEvent = actualMillis;       // save actual time for next compare
+
+}
+
+void MailSensor_OutDoor() {
+  mailCount = mailCount + 1;
+  snprintf(tempBuffer, sizeof(tempBuffer), "You got %d Mails", mailCount);
+  _PRINT_DEBUG_(tempBuffer);
+  //  Callmebot.facebookMessage(apiKey2, (String)buff);
+  //  Callmebot.whatsappMessage(phoneNumber, apiKey, (String)buff);
+}
+
+void MailSensor_InDoor() {
+  mailCount = 0;
+  //  Callmebot.facebookMessage(apiKey2, "Mails Cleared");
+  //  Callmebot.whatsappMessage(phoneNumber, apiKey, "Mails Cleared");
+  _PRINT_DEBUG_("Mails Cleared");
+}
 
 
 void audio_eof_mp3(const char *info) {
@@ -177,7 +305,7 @@ void timeavailable(struct timeval *t)
   _PRINT_DEBUG_("Got time adjustment from NTP!\n");
   checkPrayerTimes();
 
-  snprintf(tempBuffer, sizeof(tempBuffer), "%02d-%02d-%04d %02d:%02d:%02d\n",
+  snprintf(tempBuffer, sizeof(tempBuffer), "%02d.%02d.%04d  %02d:%02d:%02d\n",
            timeinfo.tm_mday, // tm_year is years since 1900
            timeinfo.tm_mon + 1,     // tm_mon is months since January (0-11)
            timeinfo.tm_year + 1900,
@@ -258,18 +386,14 @@ void checkPrayerTimes() {
     }
   }
 
-  snprintf(tempBuffer, sizeof(tempBuffer), "%02d-%02d-%04d %02d:%02d:%02d - ",
-           timeinfo.tm_mday, // tm_year is years since 1900
-           timeinfo.tm_mon + 1,     // tm_mon is months since January (0-11)
-           timeinfo.tm_year + 1900,
-           timeinfo.tm_hour,
-           timeinfo.tm_min,
-           timeinfo.tm_sec);
+  snprintf(tempBuffer, sizeof(tempBuffer), "%02d.%02d.%04d  %02d:%02d:%02d  ",
+           timeinfo.tm_mday, timeinfo.tm_mon + 1, timeinfo.tm_year + 1900,
+           timeinfo.tm_hour, timeinfo.tm_min, timeinfo.tm_sec);
   _PRINT_DEBUG_(tempBuffer);
 
-  snprintf(tempBuffer, sizeof(tempBuffer), "%s - %s - F:%s D:%s A:%s M:%s I:%s\n\n",
-           Date_hijri.c_str(), Month_hijri.c_str(), Time_Fajr.c_str(),
-           Time_Dhuhr.c_str(), Time_Asr.c_str(), Time_Maghrib.c_str(), Time_Isha.c_str());
+  snprintf(tempBuffer, sizeof(tempBuffer), "%s-%s  F%s D%s A%s M%s I%s\n\n",
+           Date_hijri.c_str(), Month_hijri.c_str(), Time_Fajr.c_str(), Time_Dhuhr.c_str(),
+           Time_Asr.c_str(), Time_Maghrib.c_str(), Time_Isha.c_str());
   _PRINT_DEBUG_(tempBuffer);
 }
 
@@ -289,81 +413,8 @@ void Timer_Task(void *pvParameters ) {
   vTaskDelay(1);
   for (;;) {
     checkPrayerTimes();
-    vTaskDelay(1000 / portTICK_PERIOD_MS);
+    vTaskDelay(10000 / portTICK_PERIOD_MS);
   }
-}
-
-
-void recvMsg(uint8_t *data, size_t len) {
-  Serial.print("Received Data...\n");
-  String d = "";
-  for (int i = 0; i < len; i++) {
-    d += char(data[i]);
-  }
-  Serial.print(d + "\n");
-}
-
-void configModeCallback (WiFiManager *myWiFiManager) {
-  snprintf(tempBuffer, sizeof(tempBuffer), "Entered config mode\nIP: %s\nSSID: %s\n",
-           WiFi.softAPIP().toString().c_str(),
-           myWiFiManager->getConfigPortalSSID().c_str());
-  _PRINT_DEBUG_(tempBuffer);
-}
-
-void esp_wifi_stp() {
-  WiFi.mode(WIFI_STA);
-  wifiManager.setClass("invert");
-  wifiManager.setAPCallback(configModeCallback);
-  wifiManager.setConnectTimeout(30);
-  wifiManager.setConfigPortalTimeout(120);
-  wifiManager.setAPClientCheck(true); // avoid timeout if client connected to softap
-  wifiManager.setScanDispPerc(true);       // show RSSI as percentage not graph icons
-  wifiManager.setConnectRetries(3);
-  wifiManager.setBreakAfterConfig(true);
-  wifiManager.setHostname(Name);
-
-  if (!wifiManager.autoConnect(Name, Pass)) {
-    Serial.print("failed to connect and hit timeout\n");
-    for (int i = 0; i <= 9; i++) {
-      //      digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
-      vTaskDelay(500);
-    }
-    //    digitalWrite(LED_BUILTIN, 1);
-    ESP.restart();
-  }
-
-  // WebSerial is accessible at "<IP Address>/webserial" in browser
-  WebSerial.begin(&server);
-  /* Attach Message Callback */
-  WebSerial.onMessage(recvMsg);
-  server.begin();
-  Serial.print("WebSerial Ready\n");
-}
-
-
-void esp_ota_stp() {
-  ArduinoOTA.setHostname(Name);
-  ArduinoOTA.onProgress([](unsigned int progress, unsigned int total) {
-    snprintf(tempBuffer, sizeof(tempBuffer), "Progress: %u%%\n", (progress / (total / 100)));
-    _PRINT_DEBUG_(tempBuffer);
-    //    digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
-  });
-  ArduinoOTA.begin();
-  Serial.print("OTA Ready\n");
-}
-
-void setup() {
-  Serial.begin(115200);
-  esp_wifi_stp();
-  esp_ota_stp();
-  xTaskCreatePinnedToCore(Audio_Task, "Audio_Task", 12 * 1024, NULL, 3, NULL, 1);
-  xTaskCreatePinnedToCore(Timer_Task, "Timer_Task", 8 * 1024, NULL, 1, NULL, 1);
-  vTaskDelay(15000);
-  xTaskCreatePinnedToCore(GetData_Task, "GetData_Task", 16 * 1024, NULL, 2, NULL, 1);
-}
-
-void loop() {
-  ArduinoOTA.handle();
 }
 
 void GetData_Task(void *pvParameters ) {
@@ -533,4 +584,195 @@ String formatBytes(size_t bytes) {
   } else {
     return String(bytes / 1024.0 / 1024.0 / 1024.0) + "GB";
   }
+}
+
+void handleNotFound(AsyncWebServerRequest *request) {
+  String message = "File Not Found\n\n";
+  message += "URI: ";
+  message += request->url();
+  message += "\nMethod: ";
+  message += (request->method() == HTTP_GET) ? "GET" : "POST";
+  message += "\nArguments: ";
+  message += request->params();
+  message += "\n";
+  for (uint8_t i = 0; i < request->params(); i++) {
+    AsyncWebParameter* p = request->getParam(i);
+    message += " " + p->name() + ": " + p->value() + "\n";
+  }
+  request->send(404, "text/plain", message);
+}
+
+
+void handleRoot(AsyncWebServerRequest *request) {
+  String html = R"=====(
+<html>
+<head>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            line-height: 1.6; /* Improve readability */
+        }
+
+        .data-container {
+            background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+            border-radius: 5px; /* Rounded corners */
+            padding: 15px; /* Inner space */
+            margin-bottom: 20px; /* Space between containers */
+            width: 50%; /* Take 80% of parent's width */
+            text-align: center; /* Center the text inside */
+        }
+
+        .data-title {
+            font-size: 1.5em; /* Make the title slightly larger */
+            font-weight: bold; /* Bold title text */
+            margin-bottom: 10px; /* Space between title and value */
+        }
+
+        .data-value {
+            font-size: 1.2em; /* Make the value even larger */
+        }
+    </style>
+    <script>
+        function fetchData() {
+            fetch('/sensordata')
+                .then(response => response.text())
+                .then(data => {
+                    let lines = data.split('\n');
+                    document.getElementById('AHT21_Temperature1').innerText = lines[0];
+                    document.getElementById('AHT21_Humidity').innerText = lines[1];
+                    document.getElementById('BMP180_Temperature2').innerText = lines[2];
+                    document.getElementById('BMP180_Pressure').innerText = lines[3];
+                    document.getElementById('Mails').innerText = lines[4];
+                });
+        }
+        setInterval(fetchData, 1000);
+    </script>
+</head>
+
+<body onload="fetchData()">
+    <div class="data-container">
+        <div class="data-title">AHT21 Temp 1:</div>
+        <div class="data-value" id="AHT21_Temperature1">Loading AHT21 Temperature...</div>
+    </div>
+    <div class="data-container">
+        <div class="data-title">AHT21 Humidity:</div>
+        <div class="data-value" id="AHT21_Humidity">Loading AHT21 Humidity...</div>
+    </div>
+    <div class="data-container">
+        <div class="data-title">BMP180 Temp 2:</div>
+        <div class="data-value" id="BMP180_Temperature2">Loading BMP180 Temperature...</div>
+    </div>
+    <div class="data-container">
+        <div class="data-title">BMP180 Pressure:</div>
+        <div class="data-value" id="BMP180_Pressure">Loading BMP180 Pressure...</div>
+    </div>
+    <div class="data-container">
+        <div class="data-title">Mails:</div>
+        <div class="data-value" id="Mails">Loading mail count...</div>
+    </div>
+</body>
+</html>
+
+  )=====";
+  request->send(200, "text/html", html);
+}
+
+void recvMsg(uint8_t *data, size_t len) {
+  Serial.print("Received Data...\n");
+  String d = "";
+  for (int i = 0; i < len; i++) {
+    d += char(data[i]);
+  }
+  Serial.print(d + "\n");
+}
+
+void configModeCallback (WiFiManager *myWiFiManager) {
+  snprintf(tempBuffer, sizeof(tempBuffer), "Entered config mode\nIP: %s\nSSID: %s\n",
+           WiFi.softAPIP().toString().c_str(),
+           myWiFiManager->getConfigPortalSSID().c_str());
+  _PRINT_DEBUG_(tempBuffer);
+}
+
+void esp_wifi_stp() {
+  WiFi.mode(WIFI_STA);
+  wifiManager.setClass("invert");
+  wifiManager.setAPCallback(configModeCallback);
+  wifiManager.setConnectTimeout(30);
+  wifiManager.setConfigPortalTimeout(120);
+  wifiManager.setAPClientCheck(true); // avoid timeout if client connected to softap
+  wifiManager.setScanDispPerc(true);       // show RSSI as percentage not graph icons
+  wifiManager.setConnectRetries(3);
+  wifiManager.setBreakAfterConfig(true);
+  wifiManager.setHostname(Name);
+
+  if (!wifiManager.autoConnect(Name, Pass)) {
+    Serial.print("failed to connect and hit timeout\n");
+    for (int i = 0; i <= 9; i++) {
+      //      digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
+      vTaskDelay(500);
+    }
+    //    digitalWrite(LED_BUILTIN, 1);
+    ESP.restart();
+  }
+
+  if (!MDNS.begin(Name)) {
+    Serial.println("Error setting up MDNS responder!");
+    while (1) {
+      delay(1000);
+    }
+  }
+  Serial.println("mDNS responder Ready\n");
+
+  // WebSerial is accessible at "<IP Address>/webserial" in browser
+  WebSerial.begin(&server);
+  /* Attach Message Callback */
+  WebSerial.onMessage(recvMsg);
+  server.begin();
+  Serial.print("WebSerial Ready\n");
+
+  server.on("/sensordata", HTTP_GET, [](AsyncWebServerRequest * request) {
+    sprintf(Data, "%2.1f Celsius\n%2.1f%%\n%2.1f Celsius\n%2.2f Bar\n", temperature, humidity, T - 5, P / 1000.0);
+    request->send(200, "text/plain", Data);
+  });
+  server.on("/", HTTP_GET, handleRoot);
+  server.onNotFound(handleNotFound);
+  server.begin();
+  Serial.println("HTTP server started");
+  MDNS.addService("http", "tcp", 80);
+
+}
+
+
+void esp_ota_stp() {
+  ArduinoOTA.setHostname(Name);
+  ArduinoOTA.onProgress([](unsigned int progress, unsigned int total) {
+    snprintf(tempBuffer, sizeof(tempBuffer), "Progress: %u%%\n", (progress / (total / 100)));
+    _PRINT_DEBUG_(tempBuffer);
+    //    digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
+  });
+  ArduinoOTA.begin();
+  Serial.print("OTA Ready\n");
+}
+
+void setup() {
+  Serial.begin(115200);
+  esp_wifi_stp();
+  esp_ota_stp();
+  xTaskCreatePinnedToCore(Audio_Task, "Audio_Task", 12 * 1024, NULL, 3, NULL, 1);
+  xTaskCreatePinnedToCore(Timer_Task, "Timer_Task", 8 * 1024, NULL, 1, NULL, 1);
+  vTaskDelay(15000);
+  xTaskCreatePinnedToCore(GetData_Task, "GetData_Task", 16 * 1024, NULL, 2, NULL, 1);
+  xTaskCreatePinnedToCore(SinricPro_Task, "SinricPro_Task", 8 * 1024, NULL, 3, NULL, 1);
+}
+
+void loop() {
+  ArduinoOTA.handle();
 }
