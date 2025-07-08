@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>File Manager</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f0f0f0;
+			color: #333;
+			margin: 0;
+			padding: 0;
+		}
+
+		.header {
+			background-color: #ffffff;
+			padding: 10px 15px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: center;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		}
+
+		h1 {
+			margin: 0;
+			font-size: 20px;
+			color: #007acc;
+		}
+
+		.menu-bar {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+			margin-top: 10px;
+		}
+
+		.menu-bar button,
+		.home-btn,
+		.actions button,
+		#back-button {
+			padding: 8px 16px;
+			background-color: #007acc;
+			border: none;
+			border-radius: 5px;
+			color: #ffffff;
+			cursor: pointer;
+			font-size: 14px;
+			text-decoration: none;
+			text-align: center;
+			line-height: 20px;
+			flex-shrink: 0;
+		}
+
+		.menu-bar button:hover,
+		.home-btn:hover,
+		.actions button:hover,
+		#back-button:hover {
+			background-color: #005f99;
+		}
+
+		.container {
+			padding: 20px 10px;
+			max-width: 1000px;
+			margin: 0 auto;
+		}
+
+		.file-manager {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			margin-top: 20px;
+		}
+
+		.item {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			align-items: center;
+			padding: 10px;
+			background-color: #ffffff;
+			border-radius: 5px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		}
+
+		.icon {
+			margin-right: 10px;
+		}
+
+		.actions {
+			margin-left: auto;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 5px;
+		}
+
+		.actions button {
+			font-size: 12px;
+		}
+
+		#preview-Window {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background: rgba(0, 0, 0, 0.8);
+			padding: 10px;
+			border-radius: 8px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+			z-index: 1100;
+			width: 90%;
+			max-width: 600px;
+			max-height: 90vh;
+			display: none;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.preview-content {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			background: #ffffff;
+			padding: 10px;
+			border-radius: 5px;
+			overflow: auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.close-btn {
+			position: absolute;
+			top: 10px;
+			right: 15px;
+			font-size: 24px;
+			cursor: pointer;
+			color: #333;
+		}
+
+		#loading-overlay {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.5);
+			color: white;
+			font-size: 18px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			z-index: 1200;
+			display: none;
+		}
+
+		.loading-spinner {
+			border: 4px solid rgba(255, 255, 255, 0.3);
+			border-top: 4px solid white;
+			border-radius: 50%;
+			width: 40px;
+			height: 40px;
+			animation: spin 1s linear infinite;
+		}
+
+		#loading-text {
+			margin-top: 10px;
+			font-size: 18px;
+			color: white;
+		}
+
+		.name-wrapper {
+			display: flex;
+			justify-content: space-between;
+			flex-grow: 1;
+			flex-wrap: wrap;
+		}
+
+		.size {
+			font-size: 14px;
+			color: #666;
+			margin-left: 10px;
+		}
+
+		@keyframes spin {
+			0% {
+				transform: rotate(0deg);
+			}
+
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+
+		@media screen and (max-width: 600px) {
+			h1 {
+				font-size: 18px;
+			}
+
+			.menu-bar {
+				flex-direction: column;
+				align-items: flex-start;
+			}
+
+			.item {
+				flex-direction: column;
+				align-items: flex-start;
+			}
+
+			.actions {
+				margin-left: 0;
+				margin-top: 10px;
+				width: 100%;
+				justify-content: flex-start;
+			}
+
+			.preview-content {
+				flex-direction: column;
+			}
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="header">
+		<h1>File Manager</h1>
+		<div class="menu-bar">
+			<a href="/" class="home-btn">Main Page</a>
+			<button id="upload-button">Upload</button>
+			<button id="new-folder-button">New Folder</button>
+			<button id="restart-button" onclick="restartESP()">🔄 Restart</button>
+		</div>
+	</div>
+	<div class="container">
+		<input type="file" id="file-upload" multiple style="display: none;">
+		<button id="back-button" style="display: none;">Back</button>
+		<div id="file-manager" class="file-manager"></div>
+	</div>
+	<div id="loading-overlay">
+		<div class="loading-spinner"></div>
+		<p id="loading-text">Loading...</p>
+	</div>
+	<div id="preview-Window" class="preview-content" style="display: none;">
+		<div class="preview-content">
+			<span id="close-preview" class="close-btn">&times;</span>
+			<div id="preview-container"></div>
+		</div>
+	</div>
+
+	<script>
+		const fileManager = document.getElementById('file-manager');
+		const fileUploadInput = document.getElementById('file-upload');
+		const backButton = document.getElementById('back-button');
+		const uploadButton = document.getElementById('upload-button');
+		const loadingOverlay = document.getElementById('loading-overlay');
+		const loadingText = document.getElementById('loading-text');
+		const newfolderbutton = document.getElementById('new-folder-button');
+		const closePreview = document.getElementById('close-preview');
+		let currentPath = ['/'];
+
+
+		function createNewFolder(folderName) {
+			const folderPath = currentPath.concat(folderName).join('/');
+
+			fetch(`/createfolder?path=${folderPath}`, { method: 'GET' })
+				.then(response => response.json())
+				.then(data => {
+					alert(data.message);
+					fetchFolderContents(currentPath);
+				})
+				.catch(error => console.error('Error creating folder:', error));
+		}
+
+		function fetchFolderContents(path) {
+			loadingText.textContent = 'Loading...';
+			loadingOverlay.style.display = 'flex';
+
+			fetch(`/getcontents?path=${path.join('/')}`)
+				.then(response => response.text())
+				.then(data => {
+					const items = parseData(data);
+					displayItems(items);
+				})
+				.catch(error => console.error('Error fetching folder contents:', error))
+				.finally(() => {
+					loadingOverlay.style.display = 'none';
+				});
+		}
+
+		function parseData(data) {
+			try {
+				const items = JSON.parse(data);
+				return items.map(item => ({
+					type: item.type,
+					name: item.name,
+					size: item.type === "file" ? item.size : ""
+				}));
+			} catch (error) {
+				console.error("Error parsing folder contents:", error);
+				return [];
+			}
+		}
+
+
+		function createItemElement(item) {
+			const itemElement = document.createElement('div');
+			itemElement.classList.add('item');
+
+			const iconElement = document.createElement('span');
+			iconElement.classList.add('icon');
+			iconElement.textContent = item.type === 'folder' ? '📁' : '📄';
+
+			const nameElement = document.createElement('span');
+			nameElement.classList.add('name');
+			nameElement.textContent = item.name;
+
+			itemElement.appendChild(iconElement);
+			itemElement.appendChild(nameElement);
+
+			if (item.type === "file") {
+				const sizeElement = document.createElement("span");
+				sizeElement.classList.add("size");
+				sizeElement.textContent = `(${item.size})`;
+
+				const nameWrapper = document.createElement("div");
+				nameWrapper.classList.add("name-wrapper");
+				nameWrapper.appendChild(nameElement);
+				nameWrapper.appendChild(sizeElement);
+
+				itemElement.appendChild(nameWrapper);
+			}
+
+			const actionsElement = document.createElement('span');
+			actionsElement.classList.add('actions');
+			if (item.type === 'file') {
+				// 🔹 Preview Button
+				const previewButton = document.createElement('button');
+				previewButton.textContent = 'Preview';
+				previewButton.addEventListener('click', () => previewFile(item.name));
+				actionsElement.appendChild(previewButton);
+				// 🔹 Download Button
+				const downloadButton = document.createElement('button');
+				downloadButton.textContent = 'Download';
+				downloadButton.addEventListener('click', () => downloadFile(item.name));
+				actionsElement.appendChild(downloadButton);
+				// 🔹 Delete Button
+				const deleteButton = document.createElement('button');
+				deleteButton.textContent = 'Delete';
+				deleteButton.addEventListener('click', () => deleteFileOrFolder(item.name, false));
+				actionsElement.appendChild(deleteButton);
+			} else if (item.type === 'folder') {
+				// Folder Actions
+				nameElement.style.cursor = 'pointer';
+				nameElement.addEventListener('click', () => openFolder(item.name));
+
+				const deleteFolderButton = document.createElement('button');
+				deleteFolderButton.textContent = 'Delete Folder';
+				deleteFolderButton.addEventListener('click', () => deleteFileOrFolder(item.name, true));
+				actionsElement.appendChild(deleteFolderButton);
+			}
+			itemElement.appendChild(actionsElement);
+			return itemElement;
+		}
+
+		function previewFile(fileName) {
+			const filePath = currentPath.concat(fileName).join('/');
+			const previewContainer = document.getElementById('preview-container');
+			const previewWindow = document.getElementById('preview-Window');
+
+			previewContainer.innerHTML = '';
+			previewWindow.style.display = 'flex';
+
+			const fileExt = fileName.split('.').pop().toLowerCase();
+			previewContainer.style.width = "auto";
+			previewContainer.style.height = "auto";
+
+			if (['png', 'jpg', 'jpeg', 'gif'].includes(fileExt)) {
+				const img = document.createElement('img');
+				img.src = `/download?path=${filePath}`;
+				img.style.maxWidth = '90vw';
+				img.style.maxHeight = '90vh';
+				previewContainer.appendChild(img);
+			} else if (['mp3', 'wav'].includes(fileExt)) {
+				const audio = document.createElement('audio');
+				audio.controls = true;
+				audio.src = `/download?path=${filePath}`;
+				previewContainer.appendChild(audio);
+				previewContainer.style.width = "300px";
+				previewContainer.style.height = "80px";
+			} else if (['txt', 'json', 'log'].includes(fileExt)) {
+				fetch(`/download?path=${filePath}`)
+					.then(response => response.text())
+					.then(text => {
+						const pre = document.createElement('pre');
+						pre.textContent = text;
+						pre.style.whiteSpace = "pre-wrap";
+						pre.style.wordWrap = "break-word";
+						pre.style.maxWidth = "90vw";
+						pre.style.maxHeight = "90vh";
+						previewContainer.appendChild(pre);
+					});
+			} else {
+				previewContainer.innerHTML = '<p>Preview not available for this file type.</p>';
+				previewContainer.style.width = "auto";
+				previewContainer.style.height = "auto";
+			}
+		}
+
+		function openFolder(folderName) {
+			currentPath.push(folderName);
+			fetchFolderContents(currentPath);
+		}
+
+		function goBack() {
+			currentPath.pop();
+			fetchFolderContents(currentPath);
+		}
+
+		function displayItems(items) {
+			fileManager.innerHTML = '';
+			items.sort((a, b) => {
+				if (a.type === b.type) {
+					return a.name.localeCompare(b.name);
+				}
+				return a.type === 'folder' ? -1 : 1;
+			});
+			items.forEach(item => {
+				const itemElement = createItemElement(item);
+				fileManager.appendChild(itemElement);
+			});
+			if (currentPath.length > 1) {
+				backButton.style.display = 'block';
+			} else {
+				backButton.style.display = 'none';
+			}
+		}
+
+		function downloadFile(fileName) {
+			const filePath = currentPath.concat(fileName).join('/');
+			window.location.href = `/download?path=${filePath}`;
+		}
+
+		function deleteFileOrFolder(name, isFolder) {
+			const filePath = currentPath.concat(name).join('/');
+			const deleteType = isFolder ? 'folder' : 'file';
+
+			fetch(`/delete?path=${filePath}&type=${deleteType}`, { method: 'GET' })
+				.then(response => response.json())
+				.then(data => {
+					alert(data.message);
+					fetchFolderContents(currentPath);
+				})
+				.catch(error => console.error('Error deleting:', error));
+		}
+
+		function uploadFiles(files) {
+			const formData = new FormData();
+			Array.from(files).forEach(file => {
+				formData.append('files[]', file);
+			});
+			const xhr = new XMLHttpRequest();
+			xhr.open('POST', '/upload');
+			loadingText.textContent = 'Uploading... 0%';
+			loadingOverlay.style.display = 'flex';
+			xhr.upload.addEventListener('progress', (event) => {
+				if (event.lengthComputable) {
+					const percentComplete = Math.floor((event.loaded / event.total) * 100);
+					loadingText.textContent = `Uploading... ${Math.floor(percentComplete)}%`;
+					if (percentComplete === 100) {
+						setTimeout(() => {
+							loadingOverlay.style.display = 'none';
+							fetchFolderContents(currentPath);
+						}, 500);
+					}
+				}
+			});
+			xhr.onload = () => {
+				if (xhr.status === 200) {
+					alert('File uploaded successfully!');
+					loadingText.textContent = 'Upload complete!';
+					setTimeout(() => {
+						loadingOverlay.style.display = 'none';
+						fetchFolderContents(currentPath);
+					}, 500);
+				} else {
+					alert('File uploaded failed!');
+					console.error('Upload failed:', xhr.responseText);
+					loadingOverlay.style.display = 'none';
+				}
+			};
+			xhr.onerror = () => {
+				alert('File uploaded failed!');
+				console.error('Upload failed.');
+				loadingOverlay.style.display = 'none';
+			};
+			xhr.send(formData);
+		}
+
+		function restartESP() {
+			fetch('/restart')
+				.then(() => alert("Restarting ESP..."))
+				.catch(err => alert("Failed to restart ESP"));
+		}
+
+		backButton.addEventListener('click', goBack);
+		uploadButton.addEventListener('click', () => {
+			fileUploadInput.click();
+		});
+		fileUploadInput.addEventListener('change', () => {
+			const files = fileUploadInput.files;
+			if (files.length > 0) {
+				uploadFiles(files);
+			}
+		});
+		newfolderbutton.addEventListener('click', () => {
+			const folderName = prompt("Enter the new folder name:");
+			if (folderName) {
+				createNewFolder(folderName);
+			}
+		});
+
+		closePreview.addEventListener('click', () => {
+			document.getElementById('preview-Window').style.display = 'none';
+		});
+
+		fetchFolderContents(currentPath);
+	</script>
+</body>
+
+</html>

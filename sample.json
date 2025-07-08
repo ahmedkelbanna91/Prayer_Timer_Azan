@@ -1,0 +1,2841 @@
+{
+    "code": 200,
+    "status": "OK",
+    "data": [
+        {
+            "timings": {
+                "Fajr": "05:27 (CET)",
+                "Sunrise": "07:17 (CET)",
+                "Dhuhr": "12:45 (CET)",
+                "Asr": "15:36 (CET)",
+                "Sunset": "18:14 (CET)",
+                "Maghrib": "18:14 (CET)",
+                "Isha": "19:58 (CET)",
+                "Imsak": "05:17 (CET)",
+                "Midnight": "00:46 (CET)",
+                "Firstthird": "22:35 (CET)",
+                "Lastthird": "02:56 (CET)"
+            },
+            "date": {
+                "readable": "01 Mar 2025",
+                "timestamp": "1740816061",
+                "gregorian": {
+                    "date": "01-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "01",
+                    "weekday": {
+                        "en": "Saturday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "01-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "1",
+                    "weekday": {
+                        "en": "Al Sabt",
+                        "ar": "\u0627\u0644\u0633\u0628\u062a"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [
+                        "1st Day of Ramadan"
+                    ],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "05:25 (CET)",
+                "Sunrise": "07:15 (CET)",
+                "Dhuhr": "12:45 (CET)",
+                "Asr": "15:37 (CET)",
+                "Sunset": "18:16 (CET)",
+                "Maghrib": "18:16 (CET)",
+                "Isha": "19:59 (CET)",
+                "Imsak": "05:15 (CET)",
+                "Midnight": "00:45 (CET)",
+                "Firstthird": "22:35 (CET)",
+                "Lastthird": "02:55 (CET)"
+            },
+            "date": {
+                "readable": "02 Mar 2025",
+                "timestamp": "1740902461",
+                "gregorian": {
+                    "date": "02-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "02",
+                    "weekday": {
+                        "en": "Sunday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "02-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "2",
+                    "weekday": {
+                        "en": "Al Ahad",
+                        "ar": "\u0627\u0644\u0627\u062d\u062f"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "05:23 (CET)",
+                "Sunrise": "07:13 (CET)",
+                "Dhuhr": "12:45 (CET)",
+                "Asr": "15:38 (CET)",
+                "Sunset": "18:17 (CET)",
+                "Maghrib": "18:17 (CET)",
+                "Isha": "20:01 (CET)",
+                "Imsak": "05:13 (CET)",
+                "Midnight": "00:45 (CET)",
+                "Firstthird": "22:36 (CET)",
+                "Lastthird": "02:54 (CET)"
+            },
+            "date": {
+                "readable": "03 Mar 2025",
+                "timestamp": "1740988861",
+                "gregorian": {
+                    "date": "03-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "03",
+                    "weekday": {
+                        "en": "Monday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "03-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "3",
+                    "weekday": {
+                        "en": "Al Athnayn",
+                        "ar": "\u0627\u0644\u0627\u062b\u0646\u064a\u0646"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "05:21 (CET)",
+                "Sunrise": "07:11 (CET)",
+                "Dhuhr": "12:44 (CET)",
+                "Asr": "15:39 (CET)",
+                "Sunset": "18:19 (CET)",
+                "Maghrib": "18:19 (CET)",
+                "Isha": "20:03 (CET)",
+                "Imsak": "05:11 (CET)",
+                "Midnight": "00:45 (CET)",
+                "Firstthird": "22:36 (CET)",
+                "Lastthird": "02:54 (CET)"
+            },
+            "date": {
+                "readable": "04 Mar 2025",
+                "timestamp": "1741075261",
+                "gregorian": {
+                    "date": "04-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "04",
+                    "weekday": {
+                        "en": "Tuesday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "04-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "4",
+                    "weekday": {
+                        "en": "Al Thalaata",
+                        "ar": "\u0627\u0644\u062b\u0644\u0627\u062b\u0627\u0621"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "05:18 (CET)",
+                "Sunrise": "07:09 (CET)",
+                "Dhuhr": "12:44 (CET)",
+                "Asr": "15:41 (CET)",
+                "Sunset": "18:21 (CET)",
+                "Maghrib": "18:21 (CET)",
+                "Isha": "20:05 (CET)",
+                "Imsak": "05:08 (CET)",
+                "Midnight": "00:45 (CET)",
+                "Firstthird": "22:37 (CET)",
+                "Lastthird": "02:53 (CET)"
+            },
+            "date": {
+                "readable": "05 Mar 2025",
+                "timestamp": "1741161661",
+                "gregorian": {
+                    "date": "05-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "05",
+                    "weekday": {
+                        "en": "Wednesday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "05-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "5",
+                    "weekday": {
+                        "en": "Al Arba'a",
+                        "ar": "\u0627\u0644\u0627\u0631\u0628\u0639\u0627\u0621"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "05:16 (CET)",
+                "Sunrise": "07:07 (CET)",
+                "Dhuhr": "12:44 (CET)",
+                "Asr": "15:42 (CET)",
+                "Sunset": "18:22 (CET)",
+                "Maghrib": "18:22 (CET)",
+                "Isha": "20:06 (CET)",
+                "Imsak": "05:06 (CET)",
+                "Midnight": "00:44 (CET)",
+                "Firstthird": "22:37 (CET)",
+                "Lastthird": "02:52 (CET)"
+            },
+            "date": {
+                "readable": "06 Mar 2025",
+                "timestamp": "1741248061",
+                "gregorian": {
+                    "date": "06-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "06",
+                    "weekday": {
+                        "en": "Thursday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "06-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "6",
+                    "weekday": {
+                        "en": "Al Khamees",
+                        "ar": "\u0627\u0644\u062e\u0645\u064a\u0633"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "05:14 (CET)",
+                "Sunrise": "07:04 (CET)",
+                "Dhuhr": "12:44 (CET)",
+                "Asr": "15:43 (CET)",
+                "Sunset": "18:24 (CET)",
+                "Maghrib": "18:24 (CET)",
+                "Isha": "20:08 (CET)",
+                "Imsak": "05:04 (CET)",
+                "Midnight": "00:44 (CET)",
+                "Firstthird": "22:38 (CET)",
+                "Lastthird": "02:51 (CET)"
+            },
+            "date": {
+                "readable": "07 Mar 2025",
+                "timestamp": "1741334461",
+                "gregorian": {
+                    "date": "07-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "07",
+                    "weekday": {
+                        "en": "Friday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "07-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "7",
+                    "weekday": {
+                        "en": "Al Juma'a",
+                        "ar": "\u0627\u0644\u062c\u0645\u0639\u0629"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "05:12 (CET)",
+                "Sunrise": "07:02 (CET)",
+                "Dhuhr": "12:44 (CET)",
+                "Asr": "15:44 (CET)",
+                "Sunset": "18:26 (CET)",
+                "Maghrib": "18:26 (CET)",
+                "Isha": "20:10 (CET)",
+                "Imsak": "05:02 (CET)",
+                "Midnight": "00:44 (CET)",
+                "Firstthird": "22:38 (CET)",
+                "Lastthird": "02:50 (CET)"
+            },
+            "date": {
+                "readable": "08 Mar 2025",
+                "timestamp": "1741420861",
+                "gregorian": {
+                    "date": "08-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "08",
+                    "weekday": {
+                        "en": "Saturday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "08-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "8",
+                    "weekday": {
+                        "en": "Al Sabt",
+                        "ar": "\u0627\u0644\u0633\u0628\u062a"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "05:09 (CET)",
+                "Sunrise": "07:00 (CET)",
+                "Dhuhr": "12:43 (CET)",
+                "Asr": "15:45 (CET)",
+                "Sunset": "18:28 (CET)",
+                "Maghrib": "18:28 (CET)",
+                "Isha": "20:12 (CET)",
+                "Imsak": "04:59 (CET)",
+                "Midnight": "00:44 (CET)",
+                "Firstthird": "22:38 (CET)",
+                "Lastthird": "02:49 (CET)"
+            },
+            "date": {
+                "readable": "09 Mar 2025",
+                "timestamp": "1741507261",
+                "gregorian": {
+                    "date": "09-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "09",
+                    "weekday": {
+                        "en": "Sunday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "09-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "9",
+                    "weekday": {
+                        "en": "Al Ahad",
+                        "ar": "\u0627\u0644\u0627\u062d\u062f"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "05:07 (CET)",
+                "Sunrise": "06:58 (CET)",
+                "Dhuhr": "12:43 (CET)",
+                "Asr": "15:47 (CET)",
+                "Sunset": "18:29 (CET)",
+                "Maghrib": "18:29 (CET)",
+                "Isha": "20:14 (CET)",
+                "Imsak": "04:57 (CET)",
+                "Midnight": "00:43 (CET)",
+                "Firstthird": "22:39 (CET)",
+                "Lastthird": "02:48 (CET)"
+            },
+            "date": {
+                "readable": "10 Mar 2025",
+                "timestamp": "1741593661",
+                "gregorian": {
+                    "date": "10-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "10",
+                    "weekday": {
+                        "en": "Monday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "10-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "10",
+                    "weekday": {
+                        "en": "Al Athnayn",
+                        "ar": "\u0627\u0644\u0627\u062b\u0646\u064a\u0646"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "05:05 (CET)",
+                "Sunrise": "06:55 (CET)",
+                "Dhuhr": "12:43 (CET)",
+                "Asr": "15:48 (CET)",
+                "Sunset": "18:31 (CET)",
+                "Maghrib": "18:31 (CET)",
+                "Isha": "20:15 (CET)",
+                "Imsak": "04:55 (CET)",
+                "Midnight": "00:43 (CET)",
+                "Firstthird": "22:39 (CET)",
+                "Lastthird": "02:47 (CET)"
+            },
+            "date": {
+                "readable": "11 Mar 2025",
+                "timestamp": "1741680061",
+                "gregorian": {
+                    "date": "11-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "11",
+                    "weekday": {
+                        "en": "Tuesday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "11-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "11",
+                    "weekday": {
+                        "en": "Al Thalaata",
+                        "ar": "\u0627\u0644\u062b\u0644\u0627\u062b\u0627\u0621"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "05:02 (CET)",
+                "Sunrise": "06:53 (CET)",
+                "Dhuhr": "12:42 (CET)",
+                "Asr": "15:49 (CET)",
+                "Sunset": "18:33 (CET)",
+                "Maghrib": "18:33 (CET)",
+                "Isha": "20:17 (CET)",
+                "Imsak": "04:52 (CET)",
+                "Midnight": "00:43 (CET)",
+                "Firstthird": "22:40 (CET)",
+                "Lastthird": "02:46 (CET)"
+            },
+            "date": {
+                "readable": "12 Mar 2025",
+                "timestamp": "1741766461",
+                "gregorian": {
+                    "date": "12-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "12",
+                    "weekday": {
+                        "en": "Wednesday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "12-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "12",
+                    "weekday": {
+                        "en": "Al Arba'a",
+                        "ar": "\u0627\u0644\u0627\u0631\u0628\u0639\u0627\u0621"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "05:00 (CET)",
+                "Sunrise": "06:51 (CET)",
+                "Dhuhr": "12:42 (CET)",
+                "Asr": "15:50 (CET)",
+                "Sunset": "18:34 (CET)",
+                "Maghrib": "18:34 (CET)",
+                "Isha": "20:19 (CET)",
+                "Imsak": "04:50 (CET)",
+                "Midnight": "00:43 (CET)",
+                "Firstthird": "22:40 (CET)",
+                "Lastthird": "02:45 (CET)"
+            },
+            "date": {
+                "readable": "13 Mar 2025",
+                "timestamp": "1741852861",
+                "gregorian": {
+                    "date": "13-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "13",
+                    "weekday": {
+                        "en": "Thursday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "13-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "13",
+                    "weekday": {
+                        "en": "Al Khamees",
+                        "ar": "\u0627\u0644\u062e\u0645\u064a\u0633"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "04:57 (CET)",
+                "Sunrise": "06:49 (CET)",
+                "Dhuhr": "12:42 (CET)",
+                "Asr": "15:51 (CET)",
+                "Sunset": "18:36 (CET)",
+                "Maghrib": "18:36 (CET)",
+                "Isha": "20:21 (CET)",
+                "Imsak": "04:47 (CET)",
+                "Midnight": "00:42 (CET)",
+                "Firstthird": "22:40 (CET)",
+                "Lastthird": "02:45 (CET)"
+            },
+            "date": {
+                "readable": "14 Mar 2025",
+                "timestamp": "1741939261",
+                "gregorian": {
+                    "date": "14-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "14",
+                    "weekday": {
+                        "en": "Friday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "14-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "14",
+                    "weekday": {
+                        "en": "Al Juma'a",
+                        "ar": "\u0627\u0644\u062c\u0645\u0639\u0629"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "04:55 (CET)",
+                "Sunrise": "06:47 (CET)",
+                "Dhuhr": "12:42 (CET)",
+                "Asr": "15:52 (CET)",
+                "Sunset": "18:38 (CET)",
+                "Maghrib": "18:38 (CET)",
+                "Isha": "20:23 (CET)",
+                "Imsak": "04:45 (CET)",
+                "Midnight": "00:42 (CET)",
+                "Firstthird": "22:41 (CET)",
+                "Lastthird": "02:44 (CET)"
+            },
+            "date": {
+                "readable": "15 Mar 2025",
+                "timestamp": "1742025661",
+                "gregorian": {
+                    "date": "15-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "15",
+                    "weekday": {
+                        "en": "Saturday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "15-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "15",
+                    "weekday": {
+                        "en": "Al Sabt",
+                        "ar": "\u0627\u0644\u0633\u0628\u062a"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "04:52 (CET)",
+                "Sunrise": "06:44 (CET)",
+                "Dhuhr": "12:41 (CET)",
+                "Asr": "15:53 (CET)",
+                "Sunset": "18:39 (CET)",
+                "Maghrib": "18:39 (CET)",
+                "Isha": "20:25 (CET)",
+                "Imsak": "04:42 (CET)",
+                "Midnight": "00:42 (CET)",
+                "Firstthird": "22:41 (CET)",
+                "Lastthird": "02:43 (CET)"
+            },
+            "date": {
+                "readable": "16 Mar 2025",
+                "timestamp": "1742112061",
+                "gregorian": {
+                    "date": "16-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "16",
+                    "weekday": {
+                        "en": "Sunday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "16-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "16",
+                    "weekday": {
+                        "en": "Al Ahad",
+                        "ar": "\u0627\u0644\u0627\u062d\u062f"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "04:50 (CET)",
+                "Sunrise": "06:42 (CET)",
+                "Dhuhr": "12:41 (CET)",
+                "Asr": "15:54 (CET)",
+                "Sunset": "18:41 (CET)",
+                "Maghrib": "18:41 (CET)",
+                "Isha": "20:27 (CET)",
+                "Imsak": "04:40 (CET)",
+                "Midnight": "00:42 (CET)",
+                "Firstthird": "22:41 (CET)",
+                "Lastthird": "02:42 (CET)"
+            },
+            "date": {
+                "readable": "17 Mar 2025",
+                "timestamp": "1742198461",
+                "gregorian": {
+                    "date": "17-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "17",
+                    "weekday": {
+                        "en": "Monday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "17-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "17",
+                    "weekday": {
+                        "en": "Al Athnayn",
+                        "ar": "\u0627\u0644\u0627\u062b\u0646\u064a\u0646"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "04:47 (CET)",
+                "Sunrise": "06:40 (CET)",
+                "Dhuhr": "12:41 (CET)",
+                "Asr": "15:55 (CET)",
+                "Sunset": "18:43 (CET)",
+                "Maghrib": "18:43 (CET)",
+                "Isha": "20:28 (CET)",
+                "Imsak": "04:37 (CET)",
+                "Midnight": "00:41 (CET)",
+                "Firstthird": "22:42 (CET)",
+                "Lastthird": "02:41 (CET)"
+            },
+            "date": {
+                "readable": "18 Mar 2025",
+                "timestamp": "1742284861",
+                "gregorian": {
+                    "date": "18-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "18",
+                    "weekday": {
+                        "en": "Tuesday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "18-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "18",
+                    "weekday": {
+                        "en": "Al Thalaata",
+                        "ar": "\u0627\u0644\u062b\u0644\u0627\u062b\u0627\u0621"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "04:45 (CET)",
+                "Sunrise": "06:37 (CET)",
+                "Dhuhr": "12:40 (CET)",
+                "Asr": "15:56 (CET)",
+                "Sunset": "18:44 (CET)",
+                "Maghrib": "18:44 (CET)",
+                "Isha": "20:30 (CET)",
+                "Imsak": "04:35 (CET)",
+                "Midnight": "00:41 (CET)",
+                "Firstthird": "22:42 (CET)",
+                "Lastthird": "02:40 (CET)"
+            },
+            "date": {
+                "readable": "19 Mar 2025",
+                "timestamp": "1742371261",
+                "gregorian": {
+                    "date": "19-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "19",
+                    "weekday": {
+                        "en": "Wednesday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "19-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "19",
+                    "weekday": {
+                        "en": "Al Arba'a",
+                        "ar": "\u0627\u0644\u0627\u0631\u0628\u0639\u0627\u0621"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "04:42 (CET)",
+                "Sunrise": "06:35 (CET)",
+                "Dhuhr": "12:40 (CET)",
+                "Asr": "15:57 (CET)",
+                "Sunset": "18:46 (CET)",
+                "Maghrib": "18:46 (CET)",
+                "Isha": "20:32 (CET)",
+                "Imsak": "04:32 (CET)",
+                "Midnight": "00:41 (CET)",
+                "Firstthird": "22:43 (CET)",
+                "Lastthird": "02:39 (CET)"
+            },
+            "date": {
+                "readable": "20 Mar 2025",
+                "timestamp": "1742457661",
+                "gregorian": {
+                    "date": "20-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "20",
+                    "weekday": {
+                        "en": "Thursday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "20-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "20",
+                    "weekday": {
+                        "en": "Al Khamees",
+                        "ar": "\u0627\u0644\u062e\u0645\u064a\u0633"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "04:40 (CET)",
+                "Sunrise": "06:33 (CET)",
+                "Dhuhr": "12:40 (CET)",
+                "Asr": "15:58 (CET)",
+                "Sunset": "18:48 (CET)",
+                "Maghrib": "18:48 (CET)",
+                "Isha": "20:34 (CET)",
+                "Imsak": "04:30 (CET)",
+                "Midnight": "00:40 (CET)",
+                "Firstthird": "22:43 (CET)",
+                "Lastthird": "02:38 (CET)"
+            },
+            "date": {
+                "readable": "21 Mar 2025",
+                "timestamp": "1742544061",
+                "gregorian": {
+                    "date": "21-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "21",
+                    "weekday": {
+                        "en": "Friday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "21-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "21",
+                    "weekday": {
+                        "en": "Al Juma'a",
+                        "ar": "\u0627\u0644\u062c\u0645\u0639\u0629"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [
+                        "Lailat-ul-Qadr"
+                    ],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "04:37 (CET)",
+                "Sunrise": "06:31 (CET)",
+                "Dhuhr": "12:40 (CET)",
+                "Asr": "15:59 (CET)",
+                "Sunset": "18:49 (CET)",
+                "Maghrib": "18:49 (CET)",
+                "Isha": "20:36 (CET)",
+                "Imsak": "04:27 (CET)",
+                "Midnight": "00:40 (CET)",
+                "Firstthird": "22:43 (CET)",
+                "Lastthird": "02:37 (CET)"
+            },
+            "date": {
+                "readable": "22 Mar 2025",
+                "timestamp": "1742630461",
+                "gregorian": {
+                    "date": "22-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "22",
+                    "weekday": {
+                        "en": "Saturday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "22-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "22",
+                    "weekday": {
+                        "en": "Al Sabt",
+                        "ar": "\u0627\u0644\u0633\u0628\u062a"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "04:35 (CET)",
+                "Sunrise": "06:28 (CET)",
+                "Dhuhr": "12:39 (CET)",
+                "Asr": "16:00 (CET)",
+                "Sunset": "18:51 (CET)",
+                "Maghrib": "18:51 (CET)",
+                "Isha": "20:38 (CET)",
+                "Imsak": "04:25 (CET)",
+                "Midnight": "00:40 (CET)",
+                "Firstthird": "22:44 (CET)",
+                "Lastthird": "02:36 (CET)"
+            },
+            "date": {
+                "readable": "23 Mar 2025",
+                "timestamp": "1742716861",
+                "gregorian": {
+                    "date": "23-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "23",
+                    "weekday": {
+                        "en": "Sunday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "23-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "23",
+                    "weekday": {
+                        "en": "Al Ahad",
+                        "ar": "\u0627\u0644\u0627\u062d\u062f"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [
+                        "Lailat-ul-Qadr"
+                    ],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "04:32 (CET)",
+                "Sunrise": "06:26 (CET)",
+                "Dhuhr": "12:39 (CET)",
+                "Asr": "16:01 (CET)",
+                "Sunset": "18:53 (CET)",
+                "Maghrib": "18:53 (CET)",
+                "Isha": "20:40 (CET)",
+                "Imsak": "04:22 (CET)",
+                "Midnight": "00:39 (CET)",
+                "Firstthird": "22:44 (CET)",
+                "Lastthird": "02:35 (CET)"
+            },
+            "date": {
+                "readable": "24 Mar 2025",
+                "timestamp": "1742803261",
+                "gregorian": {
+                    "date": "24-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "24",
+                    "weekday": {
+                        "en": "Monday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "24-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "24",
+                    "weekday": {
+                        "en": "Al Athnayn",
+                        "ar": "\u0627\u0644\u0627\u062b\u0646\u064a\u0646"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "04:29 (CET)",
+                "Sunrise": "06:24 (CET)",
+                "Dhuhr": "12:39 (CET)",
+                "Asr": "16:02 (CET)",
+                "Sunset": "18:54 (CET)",
+                "Maghrib": "18:54 (CET)",
+                "Isha": "20:42 (CET)",
+                "Imsak": "04:19 (CET)",
+                "Midnight": "00:39 (CET)",
+                "Firstthird": "22:44 (CET)",
+                "Lastthird": "02:34 (CET)"
+            },
+            "date": {
+                "readable": "25 Mar 2025",
+                "timestamp": "1742889661",
+                "gregorian": {
+                    "date": "25-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "25",
+                    "weekday": {
+                        "en": "Tuesday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "25-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "25",
+                    "weekday": {
+                        "en": "Al Thalaata",
+                        "ar": "\u0627\u0644\u062b\u0644\u0627\u062b\u0627\u0621"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [
+                        "Lailat-ul-Qadr"
+                    ],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "04:27 (CET)",
+                "Sunrise": "06:22 (CET)",
+                "Dhuhr": "12:38 (CET)",
+                "Asr": "16:03 (CET)",
+                "Sunset": "18:56 (CET)",
+                "Maghrib": "18:56 (CET)",
+                "Isha": "20:44 (CET)",
+                "Imsak": "04:17 (CET)",
+                "Midnight": "00:39 (CET)",
+                "Firstthird": "22:45 (CET)",
+                "Lastthird": "02:33 (CET)"
+            },
+            "date": {
+                "readable": "26 Mar 2025",
+                "timestamp": "1742976061",
+                "gregorian": {
+                    "date": "26-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "26",
+                    "weekday": {
+                        "en": "Wednesday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "26-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "26",
+                    "weekday": {
+                        "en": "Al Arba'a",
+                        "ar": "\u0627\u0644\u0627\u0631\u0628\u0639\u0627\u0621"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "04:24 (CET)",
+                "Sunrise": "06:19 (CET)",
+                "Dhuhr": "12:38 (CET)",
+                "Asr": "16:04 (CET)",
+                "Sunset": "18:58 (CET)",
+                "Maghrib": "18:58 (CET)",
+                "Isha": "20:46 (CET)",
+                "Imsak": "04:14 (CET)",
+                "Midnight": "00:39 (CET)",
+                "Firstthird": "22:45 (CET)",
+                "Lastthird": "02:32 (CET)"
+            },
+            "date": {
+                "readable": "27 Mar 2025",
+                "timestamp": "1743062461",
+                "gregorian": {
+                    "date": "27-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "27",
+                    "weekday": {
+                        "en": "Thursday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "27-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "27",
+                    "weekday": {
+                        "en": "Al Khamees",
+                        "ar": "\u0627\u0644\u062e\u0645\u064a\u0633"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [
+                        "Lailat-ul-Qadr"
+                    ],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "04:21 (CET)",
+                "Sunrise": "06:17 (CET)",
+                "Dhuhr": "12:38 (CET)",
+                "Asr": "16:05 (CET)",
+                "Sunset": "18:59 (CET)",
+                "Maghrib": "18:59 (CET)",
+                "Isha": "20:48 (CET)",
+                "Imsak": "04:11 (CET)",
+                "Midnight": "00:38 (CET)",
+                "Firstthird": "22:45 (CET)",
+                "Lastthird": "02:31 (CET)"
+            },
+            "date": {
+                "readable": "28 Mar 2025",
+                "timestamp": "1743148861",
+                "gregorian": {
+                    "date": "28-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "28",
+                    "weekday": {
+                        "en": "Friday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "28-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "28",
+                    "weekday": {
+                        "en": "Al Juma'a",
+                        "ar": "\u0627\u0644\u062c\u0645\u0639\u0629"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "04:19 (CET)",
+                "Sunrise": "06:15 (CET)",
+                "Dhuhr": "12:37 (CET)",
+                "Asr": "16:06 (CET)",
+                "Sunset": "19:01 (CET)",
+                "Maghrib": "19:01 (CET)",
+                "Isha": "20:50 (CET)",
+                "Imsak": "04:09 (CET)",
+                "Midnight": "00:38 (CET)",
+                "Firstthird": "22:46 (CET)",
+                "Lastthird": "02:30 (CET)"
+            },
+            "date": {
+                "readable": "29 Mar 2025",
+                "timestamp": "1743235261",
+                "gregorian": {
+                    "date": "29-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "29",
+                    "weekday": {
+                        "en": "Saturday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "29-09-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "29",
+                    "weekday": {
+                        "en": "Al Sabt",
+                        "ar": "\u0627\u0644\u0633\u0628\u062a"
+                    },
+                    "month": {
+                        "number": 9,
+                        "en": "Rama\u1e0d\u0101n",
+                        "ar": "\u0631\u064e\u0645\u064e\u0636\u0627\u0646",
+                        "days": 29
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [
+                        "Lailat-ul-Qadr"
+                    ],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "05:16 (CEST)",
+                "Sunrise": "07:13 (CEST)",
+                "Dhuhr": "13:37 (CEST)",
+                "Asr": "17:07 (CEST)",
+                "Sunset": "20:03 (CEST)",
+                "Maghrib": "20:03 (CEST)",
+                "Isha": "21:52 (CEST)",
+                "Imsak": "05:06 (CEST)",
+                "Midnight": "01:38 (CEST)",
+                "Firstthird": "23:46 (CEST)",
+                "Lastthird": "03:29 (CEST)"
+            },
+            "date": {
+                "readable": "30 Mar 2025",
+                "timestamp": "1743318061",
+                "gregorian": {
+                    "date": "30-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "30",
+                    "weekday": {
+                        "en": "Sunday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "01-10-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "1",
+                    "weekday": {
+                        "en": "Al Ahad",
+                        "ar": "\u0627\u0644\u0627\u062d\u062f"
+                    },
+                    "month": {
+                        "number": 10,
+                        "en": "Shaww\u0101l",
+                        "ar": "\u0634\u064e\u0648\u0651\u0627\u0644",
+                        "days": 30
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [
+                        "Eid-ul-Fitr"
+                    ],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        },
+        {
+            "timings": {
+                "Fajr": "05:13 (CEST)",
+                "Sunrise": "07:10 (CEST)",
+                "Dhuhr": "13:37 (CEST)",
+                "Asr": "17:08 (CEST)",
+                "Sunset": "20:04 (CEST)",
+                "Maghrib": "20:04 (CEST)",
+                "Isha": "21:54 (CEST)",
+                "Imsak": "05:03 (CEST)",
+                "Midnight": "01:37 (CEST)",
+                "Firstthird": "23:46 (CEST)",
+                "Lastthird": "03:28 (CEST)"
+            },
+            "date": {
+                "readable": "31 Mar 2025",
+                "timestamp": "1743404461",
+                "gregorian": {
+                    "date": "31-03-2025",
+                    "format": "DD-MM-YYYY",
+                    "day": "31",
+                    "weekday": {
+                        "en": "Monday"
+                    },
+                    "month": {
+                        "number": 3,
+                        "en": "March"
+                    },
+                    "year": "2025",
+                    "designation": {
+                        "abbreviated": "AD",
+                        "expanded": "Anno Domini"
+                    },
+                    "lunarSighting": false
+                },
+                "hijri": {
+                    "date": "02-10-1446",
+                    "format": "DD-MM-YYYY",
+                    "day": "2",
+                    "weekday": {
+                        "en": "Al Athnayn",
+                        "ar": "\u0627\u0644\u0627\u062b\u0646\u064a\u0646"
+                    },
+                    "month": {
+                        "number": 10,
+                        "en": "Shaww\u0101l",
+                        "ar": "\u0634\u064e\u0648\u0651\u0627\u0644",
+                        "days": 30
+                    },
+                    "year": "1446",
+                    "designation": {
+                        "abbreviated": "AH",
+                        "expanded": "Anno Hegirae"
+                    },
+                    "holidays": [],
+                    "adjustedHolidays": [],
+                    "method": "HJCoSA"
+                }
+            },
+            "meta": {
+                "latitude": 1.234567,
+                "longitude": 2.34567,
+                "timezone": "Europe\/Berlin",
+                "method": {
+                    "id": 3,
+                    "name": "Muslim World League",
+                    "params": {
+                        "Fajr": 18,
+                        "Isha": 17
+                    },
+                    "location": {
+                        "latitude": 51.5194682,
+                        "longitude": -0.1360365
+                    }
+                },
+                "latitudeAdjustmentMethod": "ANGLE_BASED",
+                "midnightMode": "STANDARD",
+                "school": "STANDARD",
+                "offset": {
+                    "Imsak": 0,
+                    "Fajr": 0,
+                    "Sunrise": 0,
+                    "Dhuhr": 0,
+                    "Asr": 0,
+                    "Maghrib": 0,
+                    "Sunset": 0,
+                    "Isha": 0,
+                    "Midnight": 0
+                }
+            }
+        }
+    ]
+}
