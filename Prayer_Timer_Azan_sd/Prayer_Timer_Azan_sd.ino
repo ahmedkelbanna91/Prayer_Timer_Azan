@@ -25,6 +25,16 @@
  *
 */
 
+// CPU Frequency: "240MHz (WiFi/BT)"
+// Events Run On: "Core 1"
+// Flash Frequency: "80MHz"
+// Flash Mode: "QIO"
+// Flash Size: "4MB (32Mb)"
+// Arduino Runs On: "Core 1"
+// Partition Scheme: "No FS 4MB (2MB APP x2)"
+// PSRAM: "Enabled"
+// Upload Speed: "921600"
+
 // esp32 3.1.3
 #define USE_PSRAM true
 
@@ -57,7 +67,8 @@
 #define MMC_CMD 15
 #define MMC_D3 13
 #define MMC_D2 12
-#define MMC_DETECT 34
+// #define MMC_DETECT 34
+#define MMC_DETECT 32
 
 #define I2S_LRC 25
 #define I2S_BCLK 26
@@ -892,8 +903,8 @@ void esp_audio_stp() {
   audio.setPinout(I2S_BCLK, I2S_LRC, I2S_DOUT);
   audio.setVolume(4);  // 0...21
   if (psramFound()) {
-    audio.setBufsize(-1, 512 * 1024);  // Use 512 KB PSRAM if available
-    _PRINT_DEBUG_("✅   Audio Buffer is set\n");
+    // audio.setBufsize(-1, 512 * 1024);  // Use 512 KB PSRAM if available
+    _PRINT_DEBUG_("✅   PSRAM Found\n");
   }
 
   digitalWrite(I2S_SD, HIGH);
