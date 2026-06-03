@@ -42,6 +42,7 @@
 #include <WiFiManager.h>
 #include <ArduinoJson.h>
 #include <HTTPClient.h>
+#include <WiFiClientSecure.h>
 #include "time.h"
 #include "esp_sntp.h"
 #include <Adafruit_NeoPixel.h>
@@ -96,6 +97,8 @@ bool prayerTimesFetched = false;
 bool OTA = false, playSurahSequence = false;
 
 int TimeInMinsTEST = -1, lastMinute = -1;
+constexpr unsigned long FETCH_RETRY_MS = 60000UL;
+constexpr unsigned long FETCH_RATE_LIMIT_RETRY_MS = 10UL * 60000UL;
 
 const char *tracks[] = {
   "Fajr.mp3",       //0
@@ -127,9 +130,7 @@ Adafruit_NeoPixel rgbwLED(1, LED_PIN, NEO_GRBW + NEO_KHZ800);
 AsyncWebServer server(80);
 Audio audio;
 
-#define COPY_JSON_STRING(dest, src) \
-  strncpy(dest, src, sizeof(dest)); \
-  dest[sizeof(dest) - 1] = '\0';  // Ensure null-termination
+#define COPY_JSON_STRING(dest, src) copyJsonString(dest, sizeof(dest), src)
 
 #define _PRINT_DEBUG_(...) debugPrint(__VA_ARGS__)
 
@@ -140,6 +141,52 @@ void debugPrint(const char *format, ...) {
   vsnprintf(buffer, sizeof(buffer), format, args);
   Serial.print(buffer);
   va_end(args);
+}
+
+void copyJsonString(char *dest, size_t destSize, const char *src) {
+  if (!dest || destSize == 0) return;
+  if (!src) {
+    dest[0] = '\0';
+    return;
+  }
+  strncpy(dest, src, destSize);
+  dest[destSize - 1] = '\0';
+}
+
+bool copyTimeHHMM(const char *timeStr, char *output, size_t outputSize) {
+  if (!timeStr || !output || outputSize == 0) return false;
+
+  size_t len = 0;
+  while (timeStr[len] && timeStr[len] != ' ' && len < outputSize - 1) {
+    output[len] = timeStr[len];
+    len++;
+  }
+  output[len] = '\0';
+  return len > 0;
+}
+
+bool parseTimeToMinutes(const char *timeStr, int &minutesOut) {
+  int hour = -1;
+  int minute = -1;
+  if (!timeStr || sscanf(timeStr, "%d:%d", &hour, &minute) != 2) return false;
+  if (hour < 0 || hour > 23 || minute < 0 || minute > 59) return false;
+
+  minutesOut = hour * 60 + minute;
+  return true;
+}
+
+void formatTime12Hour(const char *timeStr, char *output, size_t outputSize) {
+  int minutes = 0;
+  if (!parseTimeToMinutes(timeStr, minutes)) {
+    snprintf(output, outputSize, "--:--");
+    return;
+  }
+
+  int hour = minutes / 60;
+  int minute = minutes % 60;
+  const char *period = (hour >= 12) ? "PM" : "AM";
+  hour = (hour % 12 == 0) ? 12 : hour % 12;
+  snprintf(output, outputSize, "%02d:%02d %s", hour, minute, period);
 }
 
 void debugging() {
@@ -167,9 +214,10 @@ void setup() {
   pinMode(I2S_SD, OUTPUT);
   digitalWrite(I2S_SD, LOW);
 
-  vTaskDelay(5000 / portTICK_PERIOD_MS);
   Serial.begin(115200);
   Serial.setDebugOutput(true);
+
+  vTaskDelay(5000 / portTICK_PERIOD_MS);
 
   if (psramInit()) _PRINT_DEBUG_("✅   PSRAM Detected! Total: %d bytes | Free: %d bytes\n", ESP.getPsramSize(), ESP.getFreePsram());
 
@@ -296,18 +344,22 @@ void fetchData(int day, int &month, int &year, const char *city, const char *cou
   }
   if (!got_time) return;
 
-  //"http://api.aladhan.com/v1/calendarByCity/2025/3?city=Dusseldorf&country=Germany&method=3"
+  //"https://api.aladhan.com/v1/calendarByCity/2025/3?city=Dusseldorf&country=Germany&method=3"
   char url[256];
-  snprintf(url, sizeof(url), "http://api.aladhan.com/v1/calendarByCity/%d/%d?city=%s&country=%s&method=3",
+  snprintf(url, sizeof(url), "https://api.aladhan.com/v1/calendarByCity/%d/%d?city=%s&country=%s&method=3",
            year, month, city, country);
 
   _PRINT_DEBUG_("✅   [HTTP] fetchData begin...\n✅   %s\n", url);
 
-  HTTPClient http;
-  // http.useHTTP10(true);
-  http.setTimeout(30000);  // 10 seconds timeout
+  WiFiClientSecure client;
+  client.setInsecure();
 
-  if (!http.begin(url)) {
+  HTTPClient http;
+  http.useHTTP10(true);
+  http.setTimeout(30000);  // 10 seconds timeout
+  http.setFollowRedirects(HTTPC_STRICT_FOLLOW_REDIRECTS);
+
+  if (!http.begin(client, url)) {
     _PRINT_DEBUG_("❌   [HTTP] Failed to initialize HTTP request\n");
     prayerTimesFetched = false;
     SHOW_LED(255, 0, 0, 0);
